@@ -13,7 +13,7 @@ function App() {
         <h1 className="text-center text-3xl font-bold">Calculadora de Propinas y Consumo</h1>
       </header>
     
-      <main className="container mx-auto mt-14 grid gap-6 md:grid-cols-2">
+      <main className="container mx-auto my-14 grid gap-6 md:grid-cols-2">
 
         <div className="">
           <h2 className="uppercase font-black mb-4 text-xl">Menú</h2>
