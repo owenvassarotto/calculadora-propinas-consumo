@@ -1,11 +1,13 @@
 import MenuItem from "./components/MenuItem";
 import OrderContents from "./components/OrderContents";
+import OrderTotals from "./components/OrderTotals";
+import TipPercentageForm from "./components/TipPercentageForm";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 
 function App() {
 
-  const { order, addItem } = useOrder();
+  const { order, addItem, removeItem, tip, setTip, placeOrder } = useOrder();
 
   return (
     <>
@@ -13,7 +15,7 @@ function App() {
         <h1 className="text-center text-3xl font-bold">Calculadora de Propinas y Consumo</h1>
       </header>
     
-      <main className="container mx-auto my-14 grid gap-6 md:grid-cols-2">
+      <main className="container mx-auto px-4 my-14 grid gap-6 md:grid-cols-2">
 
         <div className="">
           <h2 className="uppercase font-black mb-4 text-xl">Menú</h2>
@@ -33,10 +35,29 @@ function App() {
           <h2 className="uppercase font-black mb-4 text-xl">Consumo</h2>
 
           <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
-            <OrderContents 
-              order={order}
-            />
-          </div>
+
+            {order.length ? (
+              <>
+                <OrderContents 
+                  order={order}
+                  removeItem={removeItem}
+                />
+    
+                <TipPercentageForm
+                  tip={tip}
+                  setTip={setTip}
+                />
+    
+                <OrderTotals 
+                  order={order}
+                  tip={tip}
+                  placeOrder={placeOrder}
+                />
+              </>
+            ) : (
+              <p className="text-center">La orden está vacía 😥</p>
+            )}
+          </div>  
         </div>
       </main>
     </>
