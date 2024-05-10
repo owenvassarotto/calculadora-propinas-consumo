@@ -10,7 +10,7 @@ Este proyecto es una calculadora de propinas y consumo diseñada para facilitar 
 
 ## Vista Previa
 
-![Vista previa de la Calculadora de Propinas](link-de-la-imagen)
+![image](https://github.com/owenvassarotto/calculadora-propinas-consumo/assets/110845731/f647bdd2-102e-4e63-971c-9bce6cc2be59)
 
 ## Tecnologías Utilizadas
 
